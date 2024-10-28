@@ -37,5 +37,6 @@ pokemonRepository.getAll().forEach(function(pokemon) {
         document.write('Wow, that is a big Pokemon!');
     } 
 } */
-//Previous loop but improved with a forEach loop
+//Previous loop now improved with a forEach loop
+
 
