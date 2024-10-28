@@ -1,10 +1,25 @@
+let pokemonRepository = (function () {
 let pokemonList = [
     {name:'Quaigsire', height: 1.4, type: ['water', 'ground']},
     {name: 'Phanpy', height: 0.5, type: ['ground']},
     {name: 'Bidoof', height:0.5, type: ['normal'] },
 ];
 
-pokemonList.forEach(function(pokemon) {
+function getAll() {
+    return pokemonList;
+}
+    
+function add(pokemon) {
+    pokemonList.push(pokemon);
+}
+
+return {
+    getAll: getAll,
+    add: add,
+}
+}) ();
+
+pokemonRepository.getAll().forEach(function(pokemon) {
     console.log('name:', pokemon.name);
     console.log('height:', pokemon.height);
     document.write('<p>' + pokemon.name + ' | Height: ' + pokemon.height + '</p>');
@@ -24,11 +39,3 @@ pokemonList.forEach(function(pokemon) {
 } */
 //Previous loop but improved with a forEach loop
 
-function divide (dividend, divisor) {
-    if(divisor === 0) {
-        return "You're trying to divide by zero"
-}else{
-    let result = dividend / divisor;
-    return result;
-}
-}
