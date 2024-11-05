@@ -19,6 +19,13 @@ function addListItem(pokemon) {
     let pokemonButton = document.createElement("button");
     pokemonButton.innerText = pokemon.name;
     pokemonButton.classList.add("button-class");
+    pokemonButton.addEventListener('click', function () {
+        showDetails(pokemon);
+    });
+    listPokemonItem.appendChild(pokemonButton);
+    pokemonList.appendChild(listPokemonItem); 
+}
+
 return {
     getAll: getAll,
     add: add,
