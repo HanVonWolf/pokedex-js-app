@@ -13,6 +13,12 @@ function add(pokemon) {
     pokemonList.push(pokemon);
 }
 
+function addListItem(pokemon) {
+    let pokemonList = document.querySelector(".pokemon-list");
+    let listPokemonItem = document.createElement("li");
+    let pokemonButton = document.createElement("button");
+    pokemonButton.innerText = pokemon.name;
+    pokemonButton.classList.add("button-class");
 return {
     getAll: getAll,
     add: add,
