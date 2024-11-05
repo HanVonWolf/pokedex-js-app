@@ -34,6 +34,8 @@ return {
     getAll: getAll,
     add: add,
 }
+    addListItem: addListItem,
+};
 }) ();
 
 pokemonRepository.getAll().forEach(function(pokemon) {
@@ -55,5 +57,11 @@ pokemonRepository.getAll().forEach(function(pokemon) {
     } 
 } */
 //Previous loop now improved with a forEach loop
+console.log(pokemonRepository.getAll());
+pokemonRepository.add({name: "Pikachu", height: 0.3, type: ['electric'] });
 
+console.log(pokemonRepository.getAll());
 
+pokemonRepository.getAll().forEach(function(pokemon) {
+    pokemonRepository.addListItem(pokemon);
+});
