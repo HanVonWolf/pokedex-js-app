@@ -23,12 +23,6 @@ function addListItem(pokemon) {
     pokemonList.appendChild(listPokemonItem); 
 }
 
-function showDetails(pokemon) {
-    loadDetails(pokemon).then(function () {
-      console.log(pokemon);
-    });
-  }
-
 function loadList() {
     return fetch(apiUrl).then(function (response) {
       return response.json();
