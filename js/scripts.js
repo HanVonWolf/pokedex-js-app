@@ -53,14 +53,10 @@ function loadList() {
     });
   }
 
-  function showModal() {
-    let modalContainer = document.querySelector('#modal-container');
-    modalContainer.classList.add('is-visible');
-  }
-
   function showModal(title, text, img) {
     let modalContainer = document.querySelector('#modal-container');
     modalContainer.innerText = '';
+    modalContainer.classList.add('is-visible');
   
     let modal = document.createElement('div');
     modal.classList.add('modal');
