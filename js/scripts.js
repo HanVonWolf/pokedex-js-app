@@ -9,22 +9,13 @@ function add(pokemon) {
 function getAll() {
     return pokemonList;
 }
-    
-function add(pokemon) {
-    pokemonList.push(pokemon);
-}
 
 function addListItem(pokemon) {
     let pokemonList = document.querySelector(".pokemon-list");
-    let listPokemonItem = document.createElement("li");
     let pokemonButton = document.createElement("button");
     pokemonButton.innerText = pokemon.name;
-    pokemonButton.classList.add("button-class");
-    pokemonButton.addEventListener('click', function () {
         showDetails(pokemon);
     });
-    listPokemonItem.appendChild(pokemonButton);
-    pokemonList.appendChild(listPokemonItem); 
 }
 
 function loadList() {
@@ -37,7 +28,6 @@ function loadList() {
           detailsUrl: item.url
         };
         add(pokemon);
-        console.log(pokemon);
       });
     }).catch(function (e) {
       console.error(e);
@@ -46,7 +36,6 @@ function loadList() {
 
   function loadDetails(item) {
     let url = item.detailsUrl;
-    return fetch(url).then(function (response) {
       return response.json();
     }).then(function (details) {
       item.imageUrl = details.sprites.front_default;
@@ -112,15 +101,12 @@ function loadList() {
     if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
       hideModal();  
     }
-  });
 
   function showDetails(pokemon) {
-    pokemonRepository.loadDetails(pokemon).then(function () {
       showModal(
       pokemon.name,
       "Height: " + pokemon.height,
       pokemon.imageUrl
-      )
     });
   }
 
