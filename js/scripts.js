@@ -12,8 +12,16 @@ function getAll() {
 
 function addListItem(pokemon) {
     let pokemonList = document.querySelector(".pokemon-list");
+    let listItem = document.createElement("li");
+    listItem.classList.add("list-group-item");
+
     let pokemonButton = document.createElement("button");
     pokemonButton.innerText = pokemon.name;
+    pokemonButton.classList.add("btn", "btn-primary");
+
+    listItem.appendChild(pokemonButton);
+    pokemonList.appendChild(listItem); 
+    pokemonButton.addEventListener('click', function(event) {
         showDetails(pokemon);
     });
 }
@@ -36,6 +44,7 @@ function loadList() {
 
   function loadDetails(item) {
     let url = item.detailsUrl;
+    return fetch(url).then(function(response) {
       return response.json();
     }).then(function (details) {
       item.imageUrl = details.sprites.front_default;
