@@ -49,7 +49,7 @@ function loadList() {
     }).then(function (details) {
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
-      item.types = details.types;
+      item.type = details.type;
     }).catch(function (e) {
       console.error(e);
     });
@@ -60,10 +60,12 @@ function loadList() {
     let modalBody = document.querySelector(".modal-body");
     let pokemonHeight = document.querySelector("#pokemonHeight");
     let pokemonImage = document.querySelector("#pokemonImage");
+    let pokemonType = document.querySelector("#pokemonType");
 
     modalTitle.innerText = title;
     pokemonHeight.innerText = text;
     pokemonImage.setAttribute('src', img);
+    pokemonType.innerText = text;
   }
 
   function showDetails(pokemon) {
@@ -71,7 +73,9 @@ function loadList() {
       showModal(
       pokemon.name,
       "Height: " + pokemon.height,
-      pokemon.imageUrl
+      pokemon.imageUrl,
+      pokemon.type,
+      "Type: " + pokemon.type,
       );
       $('#pokemonModal').modal('show');
     });
@@ -93,4 +97,22 @@ pokemonRepository.loadList().then(function() {
     });
   });
 
-//console.log(pokemonRepository.getAll());//
+  function myFunction() {
+    // Declare variables
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById('myInput');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName('li');
+  
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("a")[0];
+      txtValue = a.textContent || a.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+  }
