@@ -1,208 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <title>Pokedex app</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Pokedex!</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="shortcut icon"
+      href="images/pokeball-32.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
+
   <body>
-    <h1>My Pokedex</h1>
+    <header class="fixed-top">
+      <nav class="navbar">
+        <a class="navabar-brand" href="index.html">PokeDex</a>
+        <form class="form-inline">
+          <input
+            id="search-input"
+            class="poke-search form-control mr-sm-2"
+            type="search"
+            placeholder="Search Pokemon"
+            aria-label="Search"
+          />
+        </form>
+      </nav>
+    </header>
+    <h1>1</h1>
+    <ul class="pokemon-list list-group"></ul>
 
-    <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#">Pokemon</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </nav>
-
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Pokemon..">
-
-<ul id="myUL">
-  <li><a href="#">bulbasaur</a></li>
-  <li><a href="#">ivysaur</a></li>
-  <li><a href="#">venusaur</a></li>
-  <li><a href="#">charmander</a></li>
-  <li><a href="#">charizard</a></li>
-  <li><a href="#">squirtle</a></li>
-  <li><a href="#">wartortle</a></li>
-  <li><a href="#">blastoise</a></li>
-  <li><a href="#">caterpie</a></li>
-  <li><a href="#">metapod</a></li>
-  <li><a href="#">butterfree</a></li>
-  <li><a href="#">weedle</a></li>
-  <li><a href="#">kakuna</a></li>
-  <li><a href="#">beedrill</a></li>
-  <li><a href="#">pidgey</a></li>
-  <li><a href="#">pidgeotto</a></li>
-  <li><a href="#">pidgeot</a></li>
-  <li><a href="#">rattata</a></li>
-  <li><a href="#">raticate</a></li>
-  <li><a href="#">spearow</a></li>
-  <li><a href="#">fearow</a></li>
-  <li><a href="#">ekans</a></li>
-  <li><a href="#">arbok</a></li>
-  <li><a href="#">pikachu</a></li>
-  <li><a href="#">raichu</a></li>
-  <li><a href="#">sandshrew</a></li>
-  <li><a href="#">sandslash</a></li>
-  <li><a href="#">nidoran-f</a></li>
-  <li><a href="#">nidorina</a></li>
-  <li><a href="#">nidoqueen</a></li>
-  <li><a href="#">nidoran-m</a></li>
-  <li><a href="#">nidorino</a></li>
-  <li><a href="#">nidoking</a></li>
-  <li><a href="#">clefairy</a></li>
-  <li><a href="#">clefable</a></li>
-  <li><a href="#">vulpix</a></li>
-  <li><a href="#">ninetales</a></li>
-  <li><a href="#">jigglypuff</a></li>
-  <li><a href="#">wigglytuff</a></li>
-  <li><a href="#">zubat</a></li>
-  <li><a href="#">golbat</a></li>
-  <li><a href="#">oddish</a></li>
-  <li><a href="#">gloom</a></li>
-  <li><a href="#">vileplume</a></li>
-  <li><a href="#">paras</a></li>
-  <li><a href="#">parasect</a></li>
-  <li><a href="#">venonat</a></li>
-  <li><a href="#">venomoth</a></li>
-  <li><a href="#">diglett</a></li>
-  <li><a href="#">dugtrio</a></li>
-  <li><a href="#">meowth</a></li>
-  <li><a href="#">persian</a></li>
-  <li><a href="#">psyduck</a></li>
-  <li><a href="#">golduck</a></li>
-  <li><a href="#">mankey</a></li>
-  <li><a href="#">primeape</a></li>
-  <li><a href="#">growlithe</a></li>
-  <li><a href="#">arcanine</a></li>
-  <li><a href="#">poliwag</a></li>
-  <li><a href="#">poliwhirl</a></li>
-  <li><a href="#">poliwrath</a></li>
-  <li><a href="#">abra</a></li>
-  <li><a href="#">kadabra</a></li>
-  <li><a href="#">alakazam</a></li>
-  <li><a href="#">machop</a></li>
-  <li><a href="#">machoke</a></li>
-  <li><a href="#">machamp</a></li>
-  <li><a href="#">bellsprout</a></li>
-  <li><a href="#">weepinbell</a></li>
-  <li><a href="#">victreebel</a></li>
-  <li><a href="#">tentacool</a></li>
-  <li><a href="#">tentacreul</a></li>
-  <li><a href="#">geodude</a></li>
-  <li><a href="#">graveler</a></li>
-  <li><a href="#">golem</a></li>
-  <li><a href="#">ponyta</a></li>
-  <li><a href="#">rapidash</a></li>
-  <li><a href="#">slowpoke</a></li>
-  <li><a href="#">slowbro</a></li>
-  <li><a href="#">magnemite</a></li>
-  <li><a href="#">magneton</a></li>
-  <li><a href="#">farfetchd</a></li>
-  <li><a href="#">duduo</a></li>
-  <li><a href="#">dodrio</a></li>
-  <li><a href="#">seel</a></li>
-  <li><a href="#">dewdog</a></li>
-  <li><a href="#">grimer</a></li>
-  <li><a href="#">muk</a></li>
-  <li><a href="#">shellder</a></li>
-  <li><a href="#">cloyster</a></li>
-  <li><a href="#">gastly</a></li>
-  <li><a href="#">haunter</a></li>
-  <li><a href="#">genger</a></li>
-  <li><a href="#">onix</a></li>
-  <li><a href="#">drowzee</a></li>
-  <li><a href="#">hypno</a></li>
-  <li><a href="#">krabby</a></li>
-  <li><a href="#">kingler</a></li>
-  <li><a href="#">voltorb</a></li>
-  <li><a href="#">electrode</a></li>
-  <li><a href="#">exeggcute</a></li>
-  <li><a href="#">exeggutor</a></li>
-  <li><a href="#">cubone</a></li>
-  <li><a href="#">marowak</a></li>
-  <li><a href="#">hitmonlee</a></li>
-  <li><a href="#">hitmonchan</a></li>
-  <li><a href="#">lickitung</a></li>
-  <li><a href="#">koffing</a></li>
-  <li><a href="#">weezing</a></li>
-  <li><a href="#">rhyhorn</a></li>
-  <li><a href="#">rhydon</a></li>
-  <li><a href="#">chansey</a></li>
-  <li><a href="#">tangela</a></li>
-  <li><a href="#">kangaskhan</a></li>
-  <li><a href="#">horsea</a></li>
-  <li><a href="#">seadra</a></li>
-  <li><a href="#">goldeen</a></li>
-  <li><a href="#">seaking</a></li>
-  <li><a href="#">staryu</a></li>
-  <li><a href="#">starmie</a></li>
-  <li><a href="#">mr-mime</a></li>
-  <li><a href="#">scyther</a></li>
-  <li><a href="#">jynx</a></li>
-  <li><a href="#">electrabuzz</a></li>
-  <li><a href="#">magmar</a></li>
-  <li><a href="#">pinsir</a></li>
-  <li><a href="#">tauros</a></li>
-  <li><a href="#">magikarp</a></li>
-  <li><a href="#">gyarados</a></li>
-  <li><a href="#">lapras</a></li>
-  <li><a href="#">ditto</a></li>
-  <li><a href="#">eevee</a></li>
-  <li><a href="#">vaporeon</a></li>
-  <li><a href="#">jolteon</a></li>
-  <li><a href="#">flareon</a></li>
-  <li><a href="#">porygon</a></li>
-  <li><a href="#">omanyte</a></li>
-  <li><a href="#">omastar</a></li>
-  <li><a href="#">kabuto</a></li>
-  <li><a href="#">kabutops</a></li>
-  <li><a href="#">aerodactyl</a></li>
-  <li><a href="#">snorlax</a></li>
-  <li><a href="#">articuno</a></li>
-  <li><a href="#">zapdos</a></li>
-  <li><a href="#">moltres</a></li>
-  <li><a href="#">dratini</a></li>
-  <li><a href="#">dragonair</a></li>
-  <li><a href="#">dragonite</a></li>
-  <li><a href="#">mewtwo</a></li>
-</ul>
-
-    <div class="container mt-5">
-      <ul class="pokemon-list list-group"></ul>
-    </div>
-
-  <div class="modal fade" id="pokemonModal" tabindex="-1" role="dialog" aria-labelledby="pokemonModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="pokemonModalLabel">Pokemon Details</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <img id="pokemonImage" src="#" alt="Image of selected Pokemon" class="img-fluid">
-          <p id="pokemonHeight"></p>
-          <p id="pokemonType"></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <!--Bootstrap Modal-->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img class="img-fluid pokemon-image" alt="Image of a Pokemon" />
+            <p class="pokemon-height"></p>
+          </div>
+          <div class="modal-footer">
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-    <script src="js/promise-polyfill.js"></script>
-    <script src="js/fetch-polyfill.js"></script>
-
-    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-    <script src="js/src-scripts.js"></script>
+    <strong>
+      <script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"
+      ></script>
+      <script src="js/promise-polyfill.js"></script>
+      <script src="js/fetch-polyfill.js"></script>
+      <script src="js/scripts.js"></script>
+    </strong>
   </body>
 </html>
